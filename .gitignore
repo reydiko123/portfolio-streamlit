@@ -1,0 +1,38 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ---- Virtual Environment ----
+venv/
+.env/
+.venv/
+
+# ---- Jupyter Notebook ----
+.ipynb_checkpoints/
+
+# ---- OS / Editor Files ----
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+
+# ---- VSCode / PyCharm ----
+.vscode/
+.idea/
+
+# ---- Streamlit ----
+.streamlit/
+
+# ---- Data / Model (optional, kalau ada dataset atau model ML besar) ----
+*.csv
+*.xlsx
+*.json
+*.pkl
+*.h5
+*.pt
+*.ckpt
