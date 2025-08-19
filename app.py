@@ -398,7 +398,7 @@ def project_card(
             else:  
                 try:
                     img = Image.open(img_path)
-                    st.image(img, use_container_width=True)
+                    st.image(img, use_column_width=True)
                 except:
                     st.write("📷 [Tambahkan gambar di sini]")
 
