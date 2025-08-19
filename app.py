@@ -431,11 +431,11 @@ def project_card(
             if demo_url != "#":
                 st.markdown(f"[🚀 Demo Aplikasi]({demo_url})")
 
-            try:
-                if extra_img_path:
+            if extra_img_path:
+                if os.path.exists(extra_img_path):
                     st.image(extra_img_path, caption="Desain Sistem", use_container_width=True)
-            except FileNotFoundError:
-                st.warning(f"Gambar '{extra_img_path}' tidak ditemukan.")
+                else:
+                    st.warning(f"Gambar tidak ditemukan: {extra_img_path}")
 
             
             if github_url != "#":
