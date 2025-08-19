@@ -337,16 +337,6 @@ pengalaman_card(
     ]
 )
 
-# GenBI
-pengalaman_card(
-    "Awardee Beasiswa Bank Indonesia (GenBI PENS) — Staff Divisi Media dan Informasi",
-    "April 2023 – April 2025",
-    [
-        "Berpartisipasi dalam seluruh acara Bank Indonesia, termasuk webinar, pelatihan kepemimpinan, dll.",
-        "Bertugas sebagai fotografer dan videografer di seluruh kegiatan Program Kerja GenBI PENS"
-    ]
-)
-
 st.write("---")
 
 # --- Projects ---
