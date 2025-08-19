@@ -53,7 +53,6 @@ dunia nyata menggunakan layanan API.
 st.write("---")
 
 # --- Konfigurasi Halaman ---
-st.set_page_config(layout="wide")
 st.header("🛠 Skills")
 
 # --- Data Skill Terstruktur ---
