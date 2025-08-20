@@ -37,7 +37,6 @@ Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surab
 """)
 
 # --- Navigasi Button ---
-st.markdown("<br>", unsafe_allow_html=True)  # spasi kecil
 colA, colB, colC, colD, colE = st.columns(5)
 
 with colA:
@@ -54,7 +53,7 @@ with colE:
 st.write("---")
 
 # --- About Me ---
-st.header("👨‍💻 Tentang Saya")
+st.markdown('<h2 id="tentang-saya">👨‍💻 Tentang Saya</h2>', unsafe_allow_html=True)
 st.write("""
 Halo Semuanya! Nama saya Reydiko Fakhran Haidi, Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS).
 Saya memiliki satu tahun pengalaman kerja sebagai Machine Learning Engineer Intern di PDAM Surya Sembada Surabaya selama 6 bulan dan Telkom Indonesia selama 6 bulan.
@@ -68,7 +67,7 @@ dunia nyata menggunakan layanan API.
 st.write("---")
 
 # --- Konfigurasi Halaman ---
-st.header("🛠 Skills")
+st.markdown('<h2 id="skills">🛠 Skills</h2>', unsafe_allow_html=True)
 
 # --- Data Skill Terstruktur ---
 skills_grouped = {
@@ -297,7 +296,7 @@ st.markdown(html, unsafe_allow_html=True)
 st.write("---")
 
 # --- Pengalaman ---
-st.header("📂 Pengalaman")
+st.markdown('<h2 id="pengalaman">📂 Pengalaman</h2>', unsafe_allow_html=True)
 
 def pengalaman_card(title, subtitle, items):
     with st.container():
@@ -355,7 +354,7 @@ pengalaman_card(
 st.write("---")
 
 # --- Projects ---
-st.header("🚀 Proyek")
+st.markdown('<h2 id="proyek">🚀 Proyek</h2>', unsafe_allow_html=True)
 
 # Fungsi kartu project
 def project_card(
@@ -590,7 +589,7 @@ project_card(
 )
 
 # --- Contact ---
-st.header("📫 Kontak")
+st.markdown('<h2 id="kontak">📫 Kontak</h2>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 
