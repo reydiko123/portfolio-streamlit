@@ -36,24 +36,10 @@ with col2:
 Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS) | AI/ML/CV Engineer dan Data Analyst Enthusiast.
 """)
 
-# --- Navigasi Button ---
-colA, colB, colC, colD, colE = st.columns(5)
-
-with colA:
-    st.markdown('<a href="#tentang-saya"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Tentang Saya</button></a>', unsafe_allow_html=True)
-with colB:
-    st.markdown('<a href="#skills"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Skills</button></a>', unsafe_allow_html=True)
-with colC:
-    st.markdown('<a href="#pengalaman"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Pengalaman</button></a>', unsafe_allow_html=True)
-with colD:
-    st.markdown('<a href="#proyek"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Proyek</button></a>', unsafe_allow_html=True)
-with colE:
-    st.markdown('<a href="#kontak"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Kontak</button></a>', unsafe_allow_html=True)
-
 st.write("---")
 
 # --- About Me ---
-st.markdown('<h2 id="tentang-saya">👨‍💻 Tentang Saya</h2>', unsafe_allow_html=True)
+st.header("👨‍💻 Tentang Saya")
 st.write("""
 Halo Semuanya! Nama saya Reydiko Fakhran Haidi, Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS).
 Saya memiliki satu tahun pengalaman kerja sebagai Machine Learning Engineer Intern di PDAM Surya Sembada Surabaya selama 6 bulan dan Telkom Indonesia selama 6 bulan.
@@ -67,7 +53,7 @@ dunia nyata menggunakan layanan API.
 st.write("---")
 
 # --- Konfigurasi Halaman ---
-st.markdown('<h2 id="skills">🛠 Skills</h2>', unsafe_allow_html=True)
+st.header("🛠 Skills")
 
 # --- Data Skill Terstruktur ---
 skills_grouped = {
@@ -296,7 +282,7 @@ st.markdown(html, unsafe_allow_html=True)
 st.write("---")
 
 # --- Pengalaman ---
-st.markdown('<h2 id="pengalaman">📂 Pengalaman</h2>', unsafe_allow_html=True)
+st.header("📂 Pengalaman")
 
 def pengalaman_card(title, subtitle, items):
     with st.container():
@@ -354,7 +340,7 @@ pengalaman_card(
 st.write("---")
 
 # --- Projects ---
-st.markdown('<h2 id="proyek">🚀 Proyek</h2>', unsafe_allow_html=True)
+st.header("🚀 Proyek")
 
 # Fungsi kartu project
 def project_card(
@@ -589,7 +575,7 @@ project_card(
 )
 
 # --- Contact ---
-st.markdown('<h2 id="kontak">📫 Kontak</h2>', unsafe_allow_html=True)
+st.header("📫 Kontak")
 
 col1, col2, col3 = st.columns(3)
 
