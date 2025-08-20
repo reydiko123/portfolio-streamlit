@@ -4,7 +4,7 @@ import base64
 import os
 
 # --- Konfigurasi Halaman ---
-st.set_page_config(page_title="Portfolio | Nama Kamu", page_icon="💼", layout="wide")
+st.set_page_config(page_title="Portfolio | Reydiko Fakhran Haidi", page_icon="💼", layout="wide")
 
 # --- Gaya CSS Kustom ---
 st.markdown("""
@@ -35,6 +35,21 @@ with col2:
     st.write("""
 Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS) | AI/ML/CV Engineer dan Data Analyst Enthusiast.
 """)
+
+# --- Navigasi Button ---
+st.markdown("<br>", unsafe_allow_html=True)  # spasi kecil
+colA, colB, colC, colD, colE = st.columns(5)
+
+with colA:
+    st.markdown('<a href="#tentang-saya"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Tentang Saya</button></a>', unsafe_allow_html=True)
+with colB:
+    st.markdown('<a href="#skills"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Skills</button></a>', unsafe_allow_html=True)
+with colC:
+    st.markdown('<a href="#pengalaman"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Pengalaman</button></a>', unsafe_allow_html=True)
+with colD:
+    st.markdown('<a href="#proyek"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Proyek</button></a>', unsafe_allow_html=True)
+with colE:
+    st.markdown('<a href="#kontak"><button style="width:100%;padding:10px;border-radius:8px;background:#1ABC9C;color:white;border:none;">Kontak</button></a>', unsafe_allow_html=True)
 
 st.write("---")
 
@@ -432,7 +447,7 @@ def project_card(
 # =========================
 # 🔹 AI Engineer Projects
 # =========================
-st.subheader("🤖 Proyek AI Engineer")
+st.subheader("🤖 Proyek AI/ML Engineer")
 
 project_card(
     "Generative AI Berdasarkan API Basis Data PDAM Surya Sembada Kota Surabaya",
@@ -531,10 +546,10 @@ project_card(
 # =========================
 # 🔹 Data Analytics Projects
 # =========================
-st.subheader("📊 Data Analytics Projects")
+st.subheader("📊 Proyek Data Analyst")
 
 project_card(
-    "Dashboard Rekomendasi Program Penurunan Stunting di NTT",
+    "Dashboard Rekomendasi Program Penurunan Stunting di NTT Tahun 2018-2022",
     "September 2023 – Desember 2023",
     "Dashboard analitik untuk memantau faktor-faktor yang mempengaruhi prevalensi stunting di NTT, dilengkapi sistem rekomendasi program kerja berbasis faktor dominan.",
     [
@@ -543,48 +558,90 @@ project_card(
         "Analisis faktor dengan Python (FactorAnalysis)."
     ],
     img_path="stunting_dashboard.png",
-    github_url="https://github.com/username/stunting-dashboard"
+    video_url="https://youtu.be/mQQpIzt-GQU",
+    skills=[
+        ("skills/pandas.png", "Pandas"),
+        ("skills/scikitlearn.png", "Scikit-Learn"),
+        ("skills/numpy.png", "NumPy"),
+        ("skills/python.png", "Python"),
+        ("skills/powerbi.png", "Power BI")
+    ]
 )
 
 project_card(
-    "Monitoring Dashboard Produksi Padi di Sumatra (1990–2020)",
-    "September 2023",
-    "Dashboard monitoring produksi padi di Sumatra, menampilkan total produksi, distribusi, curah hujan rata-rata, dan luas panen.",
+    "Dashboard Analitik Yayasan Dana Sosial Al-Falah Surabaya",
+    "Juli 2023 – September 2023",
+    "Dashboard analitik untuk memantau dana terhimpun dan dana tersalur, dilengkapi dengan fitur clustering serta forecasting untuk mendukung pengambilan keputusan yayasan.",
     [
-        "Membangun dashboard analitik dengan Power BI.",
-        "Menggunakan K-Means clustering untuk analisis pola."
+        "Membaca dan menganalisis insight dari data (Dana Terhimpun & Dana Tersalur).",
+        "Membuat clustering data dengan metode K-Means.",
+        "Membangun forecasting dana dengan Python (ARIMA/Prophet).",
+        "Membuat dashboard interaktif dengan Power BI."
     ],
-    img_path="rice_production.png",
-    github_url="https://github.com/username/rice-dashboard"
-)
-
-project_card(
-    "Accommodation Recommendation Dashboard sekitar ITS, PENS, PPNS",
-    "Agustus 2023 – Oktober 2023",
-    "Dashboard rekomendasi akomodasi berdasarkan fasilitas yang dipilih, menggunakan data dari Mamikos.",
-    [
-        "Membangun dashboard interaktif dengan Power BI."
-    ],
-    img_path="accommodation_dashboard.png",
-    github_url="https://github.com/username/accommodation-dashboard"
-)
-
-project_card(
-    "Data Mart UKT Mahasiswa UPN Jawa Timur 2022",
-    "Mei 2023 – Juni 2023",
-    "Implementasi Data Mart dengan skema Star Schema untuk menentukan UKT berdasarkan faktor pendukung, menggunakan clustering.",
-    [
-        "Membuat ETL di Pentaho Data Integration.",
-        "Visualisasi data dengan Power BI.",
-        "Perbandingan model clustering: Fuzzy Possibilitic C-Means, Fuzzy C-Means, K-Means."
-    ],
-    img_path="ukt_datamart.png",
-    github_url="https://github.com/username/ukt-datamart"
+    img_path="ydsf_dashboard.png",
+    video_url="https://youtu.be/Emc6MmD3IEM",
+    skills=[
+        ("skills/pandas.png", "Pandas"),
+        ("skills/scikitlearn.png", "Scikit-Learn"),
+        ("skills/numpy.png", "NumPy"),
+        ("skills/python.png", "Python"),
+        ("skills/powerbi.png", "Power BI")
+    ]
 )
 
 # --- Contact ---
 st.header("📫 Kontak")
-st.write("📩 reydikofakhran@gmail.com")
-st.write("🔗 [LinkedIn](https://www.linkedin.com/in/reydikofakhranhaidi/)")
-st.write("☏ [WhatsApp](http://wa.me/6282213185236)")
+
+col1, col2, col3 = st.columns(3)
+
+card_style = """
+    <style>
+    .contact-card {
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 5px; /* space bawah kecil */
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background-color: var(--background-color); /* ikut theme streamlit */
+        color: var(--text-color);
+        border: 1px solid var(--secondary-background-color);
+    }
+    .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .contact-card a {
+        color: var(--text-color) !important;
+        text-decoration: none;
+    }
+
+    /* Atur padding bawah global biar ga kosong */
+    .block-container {
+        padding-bottom: 20px !important;
+    }
+    </style>
+"""
+
+st.markdown(card_style, unsafe_allow_html=True)
+
+def contact_card(icon, link, label):
+    return f"""
+        <div class="contact-card">
+            <p style="font-size:28px; margin:0;">{icon}</p>
+            <a href="{link}" target="_blank" style="font-size:16px;">
+                {label}
+            </a>
+        </div>
+    """
+
+with col1:
+    st.markdown(contact_card("📩", "https://mail.google.com/mail/?view=cm&fs=1&to=reydikofakhran@gmail.com", "Email"), unsafe_allow_html=True)
+
+with col2:
+    st.markdown(contact_card("🔗", "https://www.linkedin.com/in/reydikofakhranhaidi/", "LinkedIn"), unsafe_allow_html=True)
+
+with col3:
+    st.markdown(contact_card("☏", "http://wa.me/6282213185236", "WhatsApp"), unsafe_allow_html=True)
+
 # st.write("💻 [GitHub](https://github.com/username)")
