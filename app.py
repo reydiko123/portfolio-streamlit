@@ -445,7 +445,6 @@ project_card(
         "Mendesain frontend berbasis ReactJs."
     ],
     img_path="project/ai/generative_ai.png",
-    github_url="https://github.com/username/generative-ai-chatbot",
     video_url="https://youtu.be/Mrv-jpRoClg",
     extra_img_path="project/ai/ds_generative_ai.png",
     skills=[
@@ -469,7 +468,6 @@ project_card(
         "Deploy model terbaik sebagai RESTful API menggunakan Flask."
     ],
     img_path="project/ai/gigi.png",
-    github_url="https://github.com/username/tooth-disease-detection",
     extra_img_path="project/ai/ds_gigi.png",
     skills=[
         ("skills/numpy.png", "NumPy"),
@@ -494,7 +492,6 @@ project_card(
         "Menambahkan logika if-else untuk jawaban class agar sesuai dengan kebutuhan user."
     ],
     img_path="project/ai/telkom.png",
-    github_url="https://github.com/username/chatbot-telkom-witel-suramadu",
     extra_img_path="project/ai/ds_telkom.png",
     skills=[
         ("skills/pandas.png", "Pandas"),
@@ -516,7 +513,6 @@ project_card(
         "Deploy model terbaik via Flask API."
     ],
     img_path="project/ai/karir.png",
-    github_url="https://github.com/username/career-recommendation",
     extra_img_path="project/ai/ds_karir.png",
     skills=[
         ("skills/pandas.png", "Pandas"),
@@ -628,5 +624,3 @@ with col2:
 
 with col3:
     st.markdown(contact_card("☏", "http://wa.me/6282213185236", "WhatsApp"), unsafe_allow_html=True)
-
-# st.write("💻 [GitHub](https://github.com/username)")
