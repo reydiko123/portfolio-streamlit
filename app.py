@@ -298,9 +298,9 @@ def pengalaman_card(title, subtitle, items):
             ">
                 <h4 style="margin-bottom:5px; color: var(--text-color);">{title}</h4>
                 <p style="color: var(--secondary-text-color); margin-top:0; margin-bottom:10px;">{subtitle}</p>
-                <ul style="margin:0; padding-left:20px; color: var(--text-color);">
+                <ol style="margin:0; padding-left:20px; color: var(--text-color);">
                     {''.join([f"<li>{item}</li>" for item in items])}
-                </ul>
+                </ol>
             </div>
             """,
             unsafe_allow_html=True
@@ -308,11 +308,14 @@ def pengalaman_card(title, subtitle, items):
 
 # Telkom
 pengalaman_card(
-    "Machine Learning Engineer Intern — Telkom Indonesia",
+    "Machine Learning Engineer Intern — Telkom Indonesia Witel Suramadu",
     "Juli 2024 – Desember 2024",
     [
-        "Membuat Chatbot Layanan Pelanggan di WhatsApp",
-        "Membuat Dashboard Monitoring Transaksi Produk di Telkom Indonesia"
+        "Mengembangkan Chatbot Layanan Pelanggan berbasis Machine Learning untuk WhatsApp.",
+        "Membangun pipeline NLP: preprocessing data, fine-tuning model klasifikasi teks, evaluasi model, dan hyperparameter tuning.",
+        "Mengimplementasikan embedding pertanyaan dan integrasi dengan Large Language Model (LLM).",
+        "Menerapkan logika if-else untuk menangani variasi jawaban berdasarkan hasil klasifikasi model.",
+        "Mengintegrasikan chatbot ke server berbasis Node.js dan WhatsApp API untuk melayani pelanggan secara real-time."
     ]
 )
 
@@ -321,7 +324,11 @@ pengalaman_card(
     "Machine Learning Engineer Intern — PDAM Surya Sembada Surabaya",
     "Januari 2024 – Juli 2024",
     [
-        "Membuat Generative AI berdasarkan database perusahaan untuk meningkatkan efisiensi dan efektivitas operasional"
+        "Mengembangkan Generative AI berbasis database internal PDAM untuk menjawab pertanyaan pelanggan secara otomatis",
+        "Merancang arsitektur sistem chatbot (React + Flask + LLM) agar dapat memproses pertanyaan pengguna dan mengembalikan jawaban relevan",
+        "Membangun pipeline NLP: Normalisasi pertanyaan, Out-of-Topic detection, Text Classification, Named Entity Recognition, hingga Text-to-Text Generation",
+        "Mengintegrasikan hasil model LLM dengan API internal perusahaan untuk menghasilkan jawaban naratif sesuai data pelanggan",
+        "Mengimplementasikan PDAMBot yang mampu memberikan informasi real-time terkait zona, kode tarif, tagihan, hingga pemakaian air pelanggan"
     ]
 )
 
@@ -330,11 +337,109 @@ pengalaman_card(
     "Data Analyst — Yayasan Dana Sosial Al-Falah Surabaya",
     "Juli 2023 – September 2023",
     [
-        "Membaca dan menganalisis insight dari data (Dana Terhimpun dan Dana Tersalur)",
-        "Membuat clustering data",
-        "Membuat forecasting data",
-        "Membuat dashboard analitik untuk dibagikan ke Yayasan Dana Sosial Al-Falah Surabaya"
+        "Melakukan pembersihan, validasi, dan preprocessing data terkait Dana Terhimpun serta Dana Tersalur dari berbagai sumber internal.",
+        "Menganalisis tren dan pola donasi menggunakan metode statistik dan visualisasi data.",
+        "Menerapkan metode clustering (K-Means) untuk segmentasi donatur dan penerima bantuan berdasarkan perilaku dan karakteristik.",
+        "Mengembangkan model forecasting (ARIMA/Prophet) untuk memprediksi Dana Terhimpun dan Dana Tersalur di periode berikutnya.",
+        "Membangun dashboard interaktif menggunakan Power BI untuk menyajikan insight kepada manajemen YDSF."
     ]
+)
+
+# GenBI
+pengalaman_card(
+    "Awardee Beasiswa Bank Indonesia (GenBI PENS) — Staff Divisi Media dan Informasi",
+    "April 2023 – April 2025",
+    [
+        "Berpartisipasi dalam seluruh acara Bank Indonesia, termasuk webinar, pelatihan kepemimpinan, dll.",
+        "Bertugas sebagai fotografer dan videografer di seluruh kegiatan Program Kerja GenBI PENS"
+    ]
+)
+
+st.write("---")
+
+# --- Curriculum Vitae ---
+st.header("📄 Curriculum Vitae (CV)")
+
+tab1, tab2 = st.tabs(["🤖 AI/ML Engineer", "📊 Data Analyst"])
+
+with tab1:
+    st.write("Untuk posisi AI/ML Engineer")
+    try:
+        with open("cv\CV Reydiko Fakhran Haidi_AIMLCV Engineer_Fix.pdf", "rb") as file:
+            st.download_button(
+                label="📥 Download CV AI/ML Engineer",
+                data=file,
+                file_name="CV_Reydiko_AI_ML_Engineer.pdf",
+                mime="application/pdf"
+            )
+    except:
+        st.warning("File CV AI/ML Engineer belum tersedia.")
+
+with tab2:
+    st.write("Untuk posisi Data Analyst")
+    try:
+        with open("cv\CV Reydiko Fakhran Haidi_Data Analyst_Fix.pdf", "rb") as file:
+            st.download_button(
+                label="📥 Download CV Data Analyst",
+                data=file,
+                file_name="CV_Reydiko_Data_Analyst.pdf",
+                mime="application/pdf"
+            )
+    except:
+        st.warning("File CV Data Analyst belum tersedia.")
+
+st.write("---")
+
+# --- Sertifikasi ---
+st.header("📜 Sertifikasi")
+
+def sertifikasi_card(title, subtitle, details, file_path=None):
+    with st.container():
+        st.markdown(
+            f"""
+            <div style="
+                background-color: var(--secondary-background-color);
+                border: 1px solid rgba(255,255,255,0.1);
+                padding:15px; 
+                border-radius:15px; 
+                margin-bottom:15px; 
+                box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+            ">
+                <h4 style="margin-bottom:5px; color: var(--text-color);">{title}</h4>
+                <p style="color: var(--secondary-text-color); margin-top:0; margin-bottom:10px;">{subtitle}</p>
+                <ol style="margin:0; padding-left:20px; color: var(--text-color);">
+                    {''.join([f"<li>{item}</li>" for item in details])}
+                </ol>
+            """,
+            unsafe_allow_html=True
+        )
+
+        if file_path:
+            try:
+                with open(file_path, "rb") as file:
+                    st.download_button(
+                        label="📥 Download Sertifikat",
+                        data=file,
+                        file_name=file_path.split("/")[-1],
+                        mime="application/octet-stream",
+                        key=file_path  # biar unik kalau banyak sertifikat
+                    )
+            except:
+                st.warning("File sertifikat tidak ditemukan.")
+
+        # Tutup div card
+        st.markdown("</div>", unsafe_allow_html=True)
+
+
+# Sertifikasi BNSP
+sertifikasi_card(
+    "Sertifikasi Kompetensi BNSP Ilmuwan Data (Data Scientist)",
+    "Badan Nasional Sertifikasi Profesi (BNSP) | Diterbitkan Nov 2024 · Berlaku hingga Nov 2027",
+    [
+        "ID Kredensial: No. 62090 2120.99 06 0000142 2024",
+        "Bidang: Data Scientist, Machine Learning, dan Artificial Intelligence (AI)."
+    ],
+    file_path="sertifikasi/bnsp.jpeg"  # ganti dengan path file sertifikat Anda
 )
 
 st.write("---")
@@ -416,8 +521,14 @@ def project_card(
                 st.markdown(f"<div style='display:flex; gap:10px; margin-bottom:10px'>{skill_html}</div>", unsafe_allow_html=True)
 
             st.write(desc)
-            st.markdown("**Kontribusi Utama:**")
-            st.markdown("".join([f"- {item}\n" for item in items]))
+            st.markdown("**Kontribusi Utama:**", unsafe_allow_html=True)
+            st.markdown(
+                f"<ol style='margin:0; padding-left:20px; color: var(--text-color);'>"
+                + "".join([f"<li>{item}</li>" for item in items])
+                + "</ol>",
+                unsafe_allow_html=True
+            )
+
             if demo_url != "#":
                 st.markdown(f"[🚀 Demo Aplikasi]({demo_url})")
 
