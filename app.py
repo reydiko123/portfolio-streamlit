@@ -365,7 +365,7 @@ tab1, tab2 = st.tabs(["🤖 AI/ML Engineer", "📊 Data Analyst"])
 with tab1:
     st.write("Untuk posisi AI/ML Engineer")
     try:
-        with open("cv\CV Reydiko Fakhran Haidi_AIMLCV Engineer_Fix.pdf", "rb") as file:
+        with open("cv/CV Reydiko Fakhran Haidi_AIMLCV Engineer_Fix.pdf", "rb") as file:
             st.download_button(
                 label="📥 Download CV AI/ML Engineer",
                 data=file,
@@ -378,7 +378,7 @@ with tab1:
 with tab2:
     st.write("Untuk posisi Data Analyst")
     try:
-        with open("cv\CV Reydiko Fakhran Haidi_Data Analyst_Fix.pdf", "rb") as file:
+        with open("cv/CV Reydiko Fakhran Haidi_Data Analyst_Fix.pdf", "rb") as file:
             st.download_button(
                 label="📥 Download CV Data Analyst",
                 data=file,
