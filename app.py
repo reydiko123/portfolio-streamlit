@@ -431,7 +431,7 @@ def sertifikasi_card(title, subtitle, details, file_path=None):
         st.markdown("</div>", unsafe_allow_html=True)
 
 
-# Sertifikasi BNSP
+# Sertifikasi BNSP Data Scientist
 sertifikasi_card(
     "Sertifikasi Kompetensi BNSP Ilmuwan Data (Data Scientist)",
     "Badan Nasional Sertifikasi Profesi (BNSP) | Diterbitkan Nov 2024 · Berlaku hingga Nov 2027",
@@ -439,7 +439,19 @@ sertifikasi_card(
         "ID Kredensial: No. 62090 2120.99 06 0000142 2024",
         "Bidang: Data Scientist, Machine Learning, dan Artificial Intelligence (AI)."
     ],
-    file_path="sertifikasi/bnsp.jpeg"  # ganti dengan path file sertifikat Anda
+    file_path="sertifikasi/bnsp_data.jpeg"
+)
+
+# Sertifikasi BNSP Customer Relationship Management
+sertifikasi_card(
+    "Sertifikasi Kompetensi BNSP Customer Relationship Management (CRM)",
+    "Badan Nasional Sertifikasi Profesi (BNSP) | Diterbitkan Nov 2024 · Berlaku hingga Nov 2027",
+    [
+        "ID Kredensial: No. 70209 4229 0 00660 2024",
+        "Bidang: Manajemen Hubungan Pelanggan (CRM)",
+        "Kualifikasi/Kompetensi: Pelaksana Pelayanan Prima Pratama (Junior Service Quality Officer / JSQO)"
+    ],
+    file_path="sertifikasi/bnsp_customer.jpg"  # simpan file upload ke folder 'sertifikasi' dengan nama ini
 )
 
 st.write("---")
