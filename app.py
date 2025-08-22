@@ -437,7 +437,8 @@ sertifikasi_card(
     "Badan Nasional Sertifikasi Profesi (BNSP) | Diterbitkan Nov 2024 · Berlaku hingga Nov 2027",
     [
         "ID Kredensial: No. 62090 2120.99 06 0000142 2024",
-        "Bidang: Data Scientist, Machine Learning, dan Artificial Intelligence (AI)."
+        "Bidang: Data Scientist, Machine Learning, dan Artificial Intelligence (AI).",
+        "Kualifikasi/Kompetensi: Ilmuan Data (Data Scientist)"
     ],
     file_path="sertifikasi/bnsp_data.jpeg"
 )
