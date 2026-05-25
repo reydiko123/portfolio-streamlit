@@ -306,6 +306,19 @@ def pengalaman_card(title, subtitle, items):
             unsafe_allow_html=True
         )
 
+# SIG
+pengalaman_card(
+    "Learning and Development Ops Administration Intern — PT. Semen Indonesia (Persero) Tbk.",
+    "Desember 2025 – Juni 2026",
+    [
+        "Mengembangkan dan mengelola Monitoring Schedule Learning Karyawan SIG 2026 untuk mendukung pelaksanaan pelatihan yang terstruktur serta pemantauan pengembangan kompetensi karyawan.",
+        "Melakukan data cleaning, validasi, dan transformasi data Learning & Development guna memastikan akurasi data dan meningkatkan efisiensi operasional.",
+        "Merancang dan membangun aplikasi CRUD Learning & Development menggunakan Microsoft PowerApps berbasis sumber data Excel untuk mengoptimalkan proses administrasi dan pengelolaan data.",
+        "Membuat dashboard interaktif Monitoring Schedule Learning Karyawan SIG 2026 menggunakan Power BI sebagai media visualisasi data dan monitoring progres pembelajaran karyawan secara real-time.",
+        "Berkolaborasi dengan tim Learning & Development dalam mendukung digitalisasi proses kerja melalui otomatisasi data dan pengembangan reporting berbasis data."
+    ]
+)
+
 # Telkom
 pengalaman_card(
     "Machine Learning Engineer Intern — Telkom Indonesia Witel Suramadu",
