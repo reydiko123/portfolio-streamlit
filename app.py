@@ -667,6 +667,44 @@ project_card(
 st.subheader("📊 Proyek Data Analyst")
 
 project_card(
+    "Aplikasi Manajemen Data LMS (Learning Management System) Semen Indonesia Group (SIG)",
+    "Maret 2026 – Juni 2026",
+    "Membuat aplikasi Learning Management System (LMS) untuk mengelola data pelatihan karyawan, meliputi jadwal pembelajaran LND dan Non-LND, pengelolaan peserta, serta master data pelatihan menggunakan Microsoft PowerApps.",
+    [
+        "Mengembangkan aplikasi interaktif menggunakan Microsoft Power Apps yang terintegrasi dengan database berbasis Excel.",
+        "Membuat fitur CRUD (Create, Read, Update, Delete) untuk pengelolaan jadwal pelatihan, peserta karyawan, vendor, instruktur, dan master learning.",
+        "Mengimplementasikan fitur pencarian, filtering, validasi data, serta form input dinamis untuk meningkatkan akurasi dan efisiensi proses administrasi learning.",
+        "Mengelola data pelatihan karyawan mencakup jadwal training, pendaftaran peserta, serta pembaruan informasi pembelajaran secara terstruktur."
+    ],
+    img_path="powerapps_dashboard.png",
+    video_url="https://youtu.be/91QgZPdozAw",
+    skills=[
+        ("skills/excel.png", "Excel"),
+        ("skills/powerfx.png", "Power FX"),
+        ("skills/powerapps.png", "Power Apps")
+    ]
+)
+
+project_card(
+    "Dashboard Analitik Schedule Learning Karyawan Semen Indonesia Group (SIG)",
+    "Januari 2026 – Maret 2026",
+    "Membuat dashboard analitik untuk memantau aktivitas pembelajaran karyawan, progres pelatihan, dan performa learning menggunakan Microsoft Power BI.",
+    [
+        "Membuat dashboard interaktif menggunakan Power BI untuk memvisualisasikan jadwal learning, status pelatihan, learning model, PIC, serta riwayat pembelajaran karyawan.",
+        "Mengembangkan fitur filter interaktif berdasarkan Learning Model, PIC, periode pelaksanaan, departemen, dan profil karyawan.",
+        "Membuat visualisasi kalender learning untuk memonitor jadwal pelatihan dan aktivitas pengembangan kompetensi karyawan.",
+        "Menyediakan insight terkait monitoring progres pelatihan seperti status Not Started, On Going, Completed, dan Not Implemented untuk mendukung pengambilan keputusan terkait pengelolaan learning."
+    ],
+    img_path="schedulelearning_dashboard.png",
+    video_url="https://youtu.be/aWHkIaSHkPQ",
+    skills=[
+        ("skills/excel.png", "Excel"),
+        ("skills/dax.png", "DAX"),
+        ("skills/powerbi.png", "Power BI")
+    ]
+)
+
+project_card(
     "Dashboard Rekomendasi Program Penurunan Stunting di NTT Tahun 2018-2022",
     "September 2023 – Desember 2023",
     "Dashboard analitik untuk memantau faktor-faktor yang mempengaruhi prevalensi stunting di NTT, dilengkapi sistem rekomendasi program kerja berbasis faktor dominan.",
