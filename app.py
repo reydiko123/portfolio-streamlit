@@ -66,6 +66,8 @@ skills_grouped = {
         ("skills/python.png", "Python", "95%"),
         ("skills/sql.png", "SQL", "75%"),
         ("skills/javascript.png", "JavaScript", "50%"),
+        ("skills/dax.png", "DAX", "70%"),
+        ("skills/powerfx.png", "Power FX", "70%"),
     ],
     "Web Development": {
         "BackEnd Frameworks": [
@@ -94,6 +96,7 @@ skills_grouped = {
             ("skills/powerbi.png", "PowerBI", "95%"),
             ("skills/looker.png", "Looker Studio", "90%"),
             ("skills/tableau.png", "Tableau", "80%"),
+            ("skills/powerapps.png", "Power Apps", "80%"),
         ],
         "Annotation Tools": [
             ("skills/labelstudio.png", "Label Studio", "95%"),
