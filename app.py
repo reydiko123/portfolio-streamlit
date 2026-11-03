@@ -31,9 +31,9 @@ with col1:
     st.image(img, width=200)
 with col2:
     st.markdown('<p class="big-font">Reydiko Fakhran Haidi</p>', unsafe_allow_html=True)
-    st.markdown("**AI Engineer | Machine Learning Engineer | Data Analyst**")
+    st.markdown("**AI Engineer | Machine Learning Engineer | Data Analyst | Web Developer**")
     st.write("""
-Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS) | AI/ML/CV Engineer dan Data Analyst Enthusiast.
+Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS) | AI/ML/CV Engineer, Data Analyst, dan Web Developer Enthusiast.
 """)
 
 st.write("---")
@@ -67,6 +67,8 @@ skills_grouped = {
         ("skills/python.png", "Python", "95%"),
         ("skills/sql.png", "SQL", "75%"),
         ("skills/javascript.png", "JavaScript", "50%"),
+        ("skills/typescript.png", "TypeScript", "65%"),
+        ("skills/php.png", "PHP", "75%"),
         ("skills/dax.png", "DAX", "70%"),
         ("skills/powerfx.png", "Power FX", "70%"),
     ],
@@ -75,12 +77,14 @@ skills_grouped = {
             ("skills/flask.png", "Flask", "85%"),
             ("skills/fastapi.png", "FastAPI", "85%"),
             ("skills/django.png", "Django", "80%"),
+            ("skills/laravel.png", "Laravel", "80%"),
         ],
         "FrontEnd Frameworks": [
             ("skills/html.png", "HTML", "70%"),
             ("skills/css.png", "CSS", "70%"),
             ("skills/streamlit.png", "Streamlit", "85%"),
             ("skills/reactjs.png", "ReactJS", "70%"),
+            ("skills/tailwind.png", "Tailwind CSS", "75%"),
         ]
     },
     "Data Science / Machine Learning": [
