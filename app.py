@@ -42,7 +42,8 @@ st.write("---")
 st.header("👨‍💻 Tentang Saya")
 st.write("""
 Halo Semuanya! Nama saya Reydiko Fakhran Haidi, Fresh Graduate jurusan Sains Data Terapan di Politeknik Elektronika Negeri Surabaya (PENS).
-Saya memiliki satu tahun pengalaman kerja sebagai Machine Learning Engineer Intern di PDAM Surya Sembada Surabaya selama 6 bulan dan Telkom Indonesia selama 6 bulan.
+Saya memiliki pengalaman magang sekitar 1,5 tahun: sebagai Machine Learning Engineer Intern di PDAM Surya Sembada Surabaya (6 bulan) dan Telkom Indonesia (6 bulan),
+serta sebagai Learning and Development Ops Administration Intern di PT. Semen Indonesia (Persero) Tbk. (6 bulan) yang berfokus pada pengolahan data, dashboard Power BI, dan aplikasi Power Apps.
 Minat saya terletak pada Machine Learning, Artificial Intelligence, Computer Vision, dan Analisis Data.
 
 Sepanjang perjalanan akademis dan profesional saya, saya telah mengembangkan dan menerapkan berbagai model pembelajaran mesin (ML) termasuk sistem NLP,
@@ -115,7 +116,7 @@ skills_grouped = {
 st.markdown("""
 <style>
 /* Default: Desktop / layar lebar */
-.row-container {
+.categories-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -205,7 +206,7 @@ st.markdown("""
 
 /* 🔹 Mobile Responsive (max 768px) */
 @media (max-width: 768px) {
-    .row-container {
+    .categories-container {
         flex-direction: column;
         align-items: center;
         gap: 40px;
@@ -261,7 +262,7 @@ def render_skills(skills):
 
 # --- Render Horizontal Layout ---
 html = '<div class="categories-container">'
-for idx, (category, data) in enumerate(skills_grouped.items()):
+for category, data in skills_grouped.items():
     html += '<div class="category-box">'
     
     # 🟢 Judul kategori dipindah ke atas
@@ -275,9 +276,6 @@ for idx, (category, data) in enumerate(skills_grouped.items()):
         html += render_skills(data)
     
     html += '</div>'
-    
-    if idx < len(skills_grouped) - 1:
-        html += '<div class="separator-vertical"></div>'
 html += '</div>'
 
 st.markdown(html, unsafe_allow_html=True)
@@ -388,7 +386,7 @@ with tab1:
                 file_name="CV_Reydiko_AI_ML_Engineer.pdf",
                 mime="application/pdf"
             )
-    except:
+    except FileNotFoundError:
         st.warning("File CV AI/ML Engineer belum tersedia.")
 
 with tab2:
@@ -401,7 +399,7 @@ with tab2:
                 file_name="CV_Reydiko_Data_Analyst.pdf",
                 mime="application/pdf"
             )
-    except:
+    except FileNotFoundError:
         st.warning("File CV Data Analyst belum tersedia.")
 
 st.write("---")
@@ -410,22 +408,16 @@ st.write("---")
 st.header("📜 Sertifikasi")
 
 def sertifikasi_card(title, subtitle, details, file_path=None):
-    with st.container():
+    # st.container(border=True) dipakai agar tombol download ikut berada di dalam card
+    # (div HTML yang dibuka/ditutup di st.markdown terpisah tidak bisa membungkus widget)
+    with st.container(border=True):
         st.markdown(
             f"""
-            <div style="
-                background-color: var(--secondary-background-color);
-                border: 1px solid rgba(255,255,255,0.1);
-                padding:15px; 
-                border-radius:15px; 
-                margin-bottom:15px; 
-                box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
-            ">
-                <h4 style="margin-bottom:5px; color: var(--text-color);">{title}</h4>
-                <p style="color: var(--secondary-text-color); margin-top:0; margin-bottom:10px;">{subtitle}</p>
-                <ol style="margin:0; padding-left:20px; color: var(--text-color);">
-                    {''.join([f"<li>{item}</li>" for item in details])}
-                </ol>
+            <h4 style="margin-bottom:5px; color: var(--text-color);">{title}</h4>
+            <p style="color: var(--secondary-text-color); margin-top:0; margin-bottom:10px;">{subtitle}</p>
+            <ol style="margin:0; padding-left:20px; color: var(--text-color);">
+                {''.join([f"<li>{item}</li>" for item in details])}
+            </ol>
             """,
             unsafe_allow_html=True
         )
@@ -436,15 +428,12 @@ def sertifikasi_card(title, subtitle, details, file_path=None):
                     st.download_button(
                         label="📥 Download Sertifikat",
                         data=file,
-                        file_name=file_path.split("/")[-1],
-                        mime="application/octet-stream",
+                        file_name=os.path.basename(file_path),
+                        mime="image/jpeg",
                         key=file_path  # biar unik kalau banyak sertifikat
                     )
-            except:
+            except FileNotFoundError:
                 st.warning("File sertifikat tidak ditemukan.")
-
-        # Tutup div card
-        st.markdown("</div>", unsafe_allow_html=True)
 
 
 # Sertifikasi BNSP Data Scientist
@@ -476,39 +465,39 @@ st.write("---")
 # --- Projects ---
 st.header("🚀 Proyek")
 
+# CSS ikon skill pada kartu project (cukup disuntikkan sekali)
+st.markdown(
+    """
+    <style>
+    .skill-circle {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .skill-circle img {
+        max-width: 35px;
+        max-height: 35px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Fungsi kartu project
 def project_card(
-    title, subtitle, desc, items, 
-    img_path="project_placeholder.png", 
-    github_url="#", demo_url="#", 
-    video_url=None, extra_img_path=None, 
-    skills=None
+    title, subtitle, desc, items,
+    img_path="project_placeholder.png",
+    github_url="#", demo_url="#",
+    video_url=None, extra_img_path=None,
+    skills=None, website_url=None
 ):
-    # CSS
-    st.markdown(
-        """
-        <style>
-        .skill-circle {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: white;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            margin-right: 10px;
-            cursor: pointer;
-        }
-        .skill-circle img {
-            max-width: 35px;
-            max-height: 35px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
     with st.container():
         col1, col2 = st.columns([1,2])
         with col1:
@@ -523,7 +512,7 @@ def project_card(
                 try:
                     img = Image.open(img_path)
                     st.image(img, use_column_width=True)
-                except:
+                except (FileNotFoundError, OSError):
                     st.write("📷 [Tambahkan gambar di sini]")
 
         with col2:
@@ -545,7 +534,7 @@ def project_card(
                             data = f.read()
                         b64 = base64.b64encode(data).decode()
                         skill_html += f'<div class="skill-circle" title="{label}"><img src="data:image/png;base64,{b64}"></div>'
-                    except:
+                    except FileNotFoundError:
                         skill_html += f'<div class="skill-circle" title="{label}">❓</div>'
                 st.markdown(f"<div style='display:flex; gap:10px; margin-bottom:10px'>{skill_html}</div>", unsafe_allow_html=True)
 
@@ -558,6 +547,10 @@ def project_card(
                 unsafe_allow_html=True
             )
 
+            if website_url:
+                domain = website_url.split("://")[-1].rstrip("/")
+                st.markdown(f"[🌐 Kunjungi Website: {domain}]({website_url})")
+
             if demo_url != "#":
                 st.markdown(f"[🚀 Demo Aplikasi]({demo_url})")
 
@@ -568,6 +561,56 @@ def project_card(
                 st.markdown(f"[🔗 GitHub Repo]({github_url})")
 
     st.write("---")
+
+# =========================
+# 🔹 Web Developer Projects
+# =========================
+st.subheader("🌐 Proyek Web Developer")
+
+project_card(
+    "SIPANGAN Pamekasan – Website Pemantauan Harga Sembako Kabupaten Pamekasan",
+    "Oktober 2026",
+    "Aplikasi web untuk memantau harga sembako antar-pasar di setiap kecamatan Kabupaten Pamekasan, terdiri dari dashboard harga publik dan panel admin untuk pengelolaan data harga.",
+    [
+        "Mengembangkan aplikasi dengan Laravel 13 (PHP), React 19, TypeScript, Inertia.js, Tailwind CSS, dan MySQL/MariaDB, dengan autentikasi admin menggunakan Laravel Fortify.",
+        "Membangun dashboard publik yang menampilkan harga terendah, tertinggi, dan rata-rata per komoditas, perbandingan harga antar-pasar, grafik tren harga (Recharts), dan peta harga interaktif per kecamatan (Leaflet).",
+        "Mengimplementasikan tabel harga dengan filter multi-select (komoditas, kecamatan, pasar) dan rentang tanggal, serta agregasi beberapa laporan menjadi harga pasar harian.",
+        "Mengembangkan modul CRUD admin untuk data harga, komoditas, pasar, kecamatan, unit pelapor, dan berita (editor rich text Tiptap), termasuk soft delete/restore dan hapus massal.",
+        "Menjaga kualitas kode dengan automated test Pest, PHPStan (level 7), Laravel Pint, dan GitHub Actions CI, serta menerapkan SEO meta per halaman, sitemap.xml, dan robots.txt."
+    ],
+    img_path="project/web/sipangan.png",
+    website_url="https://infosipangan.com",
+    skills=[
+        ("skills/laravel.png", "Laravel"),
+        ("skills/php.png", "PHP"),
+        ("skills/reactjs.png", "ReactJS"),
+        ("skills/typescript.png", "TypeScript"),
+        ("skills/tailwind.png", "Tailwind CSS"),
+        ("skills/mysql.png", "MySQL/MariaDB")
+    ]
+)
+
+project_card(
+    "Taretan Media – Website Penerbit Buku & Publikasi Ilmiah",
+    "September 2026",
+    "Aplikasi web full-stack untuk penerbit buku dan publikasi ilmiah yang berfungsi sebagai katalog buku, direktori jurnal, portal berita, dan kanal lead generation melalui WhatsApp, dikelola melalui CMS admin privat.",
+    [
+        "Mengembangkan backend dengan Laravel 13 (PHP) dan MySQL/MariaDB, serta frontend publik dengan React 19, TypeScript, Inertia.js, dan Tailwind CSS.",
+        "Membangun CMS admin dengan Filament untuk mengelola buku, jurnal, artikel, penulis, kategori, dan layanan, mendukung status draft/published, multi-kategori, dan banyak penulis per buku.",
+        "Mengimplementasikan katalog buku dengan pencarian judul/penulis serta filter kategori, rentang harga, dan tahun terbit, ditambah form kirim naskah yang membuka WhatsApp dengan pesan terformat.",
+        "Menerapkan praktik keamanan dan kualitas: authorization policy, proteksi CSRF, sanitasi HTML rich text, SEO (meta tag, sitemap.xml, robots.txt), dan automated test PHPUnit di GitHub Actions CI."
+    ],
+    img_path="project/web/taretanmedia.png",
+    website_url="https://taretanmedia.com",
+    skills=[
+        ("skills/laravel.png", "Laravel"),
+        ("skills/php.png", "PHP"),
+        ("skills/reactjs.png", "ReactJS"),
+        ("skills/typescript.png", "TypeScript"),
+        ("skills/tailwind.png", "Tailwind CSS"),
+        ("skills/mysql.png", "MySQL/MariaDB")
+    ]
+)
 
 # =========================
 # 🔹 AI Engineer Projects
@@ -615,7 +658,7 @@ project_card(
         ("skills/cvat.png", "CVAT"),
         ("skills/python.png", "Python"),
         ("skills/opencv.png", "OpenCV"),
-        ("skills/tensorflow.png", "TensorFlow")
+        ("skills/pytorch.png", "PyTorch")
     ]
 )
 
